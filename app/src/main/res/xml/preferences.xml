@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="user_catagory"
+        android:title="Your Profile">
+
+            <EditTextPreference
+                android:dialogTitle="Your name"
+                android:dialogMessage="Enter Name"
+                android:inputType="textCapWords"
+                android:key="key_name"
+                android:title="Name"
+                android:summary="Dan Howard">
+            </EditTextPreference>
+
+        <EditTextPreference
+            android:dialogTitle="Your Email"
+            android:dialogMessage="Enter Email"
+            android:inputType="textCapWords"
+            android:key="key_email"
+            android:title="Email"
+            android:summary="Dan@dan.com">
+        </EditTextPreference>
+
+        <EditTextPreference
+            android:dialogTitle="Your Height"
+            android:dialogMessage="Enter your height"
+            android:inputType="textCapWords"
+            android:key="key_height"
+            android:title="Height"
+            android:summary="1.81m">
+        </EditTextPreference>
+
+    </PreferenceCategory>
+        <PreferenceCategory
+            android:title="Player">
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="enable_timer"
+                android:title="Enable timer"
+                android:summary="Enable or disable timer"/>
+
+            <ListPreference
+                android:dependency="enable_timer"
+                android:title="Sleep timer"
+                android:key="key_timer"
+                android:summary="Stop playing music after time"
+                android:entries="@array/timerList"
+                android:entryValues="@array/timerListValues"/>
+
+            <ListPreference
+                android:key="key_music_quality"
+                android:title="music quality"
+                android:entries="@array/timerListValues"
+                android:entryValues="@array/musicQualityValues"/>
+
+            <MultiSelectListPreference
+                android:dialogTitle="Select all your options"
+                android:key="music type"
+                android:title="Types of music"
+                android:summary="press to show list"
+                android:entries="@array/typesOfMusic"
+                android:entryValues="@array/typesOfMusicValues"
+                />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Other">
+
+            <SwitchPreference
+                android:key="enable_notifcation"
+                android:editable="true"
+                android:title="push notifications"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
